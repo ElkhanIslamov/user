@@ -1,0 +1,60 @@
+﻿
+@{
+    ViewData["Title"] = "Create";
+}
+@model Product
+<div class="content-wrapper">
+    <div class="row">
+        <div class="col-md-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Default form</h4>
+                    <p class="card-description">
+                        Basic form layout
+                    </p>
+                    <form class="forms-sample" method="post">
+                        <div class="form-group">
+                            <label for="Name">Name</label>
+                            <input asp-for="Name" class="form-control" placeholder="Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="Description">Description</label>
+                            <input asp-for="Description" class="form-control" placeholder="Description">
+                        </div>
+                        <div class="form-group">
+                            <label for="Price">Price</label>
+                            <input asp-for="Price" class="form-control" placeholder="Price">
+                        </div>
+                        <div class="form-group">
+                            <label for="Rating">Rating</label>
+                            <input asp-for="Rating" class="form-control" placeholder="Rating">
+                        </div>
+                        <div class="form-group">
+                            <label for="DiscountPercent">DiscountPercent</label>
+                            <input asp-for="DiscountPercent" class="form-control" placeholder="DiscountPercent">
+                        </div>
+                        <div class="form-group">
+                            <label for="Image">Image</label>
+                            <input asp-for="Image" class="form-control" placeholder="Image">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect2">Default select</label>
+                            <select class="form-control" id="exampleFormControlSelect2" name="categoryId">
+                              @foreach(Category category in ViewBag.Categories )
+                                {
+                                    
+                                <option value="@category.Id">@category.Name</option>
+                                }
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                        <button  class="btn btn-light">Cancel</button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
